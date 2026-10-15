@@ -1,0 +1,392 @@
+{
+  "gesture_roles": {
+    "lesson": "Difficulty through gesture vocabulary, not total-object inflation",
+    "examples": [
+      {
+        "chart": "Rrhar'il",
+        "IN": {
+          "notes": 1300,
+          "tap": 802,
+          "drag": 410,
+          "hold": 53,
+          "flick": 35
+        },
+        "AT": {
+          "notes": 1300,
+          "tap": 991,
+          "drag": 44,
+          "hold": 123,
+          "flick": 142
+        }
+      },
+      {
+        "chart": "Distorted Fate",
+        "IN_notes": 1449,
+        "AT_notes": 1283,
+        "IN_holds": 132,
+        "AT_holds": 212
+      }
+    ],
+    "source": "53-chart local official-format study; community archival source https://github.com/7 aGiven/Phigros_Resource",
+    "limitations": "Counts do not establish finger requirements or musical instrument identities"
+  },
+  "four_key_stair": {
+    "lesson": "Four ordered local stations, with world-carrier/other-hold caveats",
+    "chart": "Chronostasis IN",
+    "source_line": 1,
+    "local_x_official": [
+      -6,
+      -2,
+      2,
+      6
+    ],
+    "execution_hypothesis": "L-middle,L-index,R-index,R-middle ascending; reverse descending",
+    "limitations": "Decoded official source line-local arrangement; visual transformations, overlapping source lines and actual hit windows still require review. Hypothesis is not validated playability.",
+    "source": "Decoded pattern-ledger study from community official-chart archive",
+    "window_seconds": [
+      56.84571428571429,
+      57.30489795918368
+    ],
+    "source_notes": [
+      {
+        "seconds": 56.84571428571429,
+        "type": 1,
+        "positionX": -6.0,
+        "duration_seconds": 0.0,
+        "side": "notesAbove"
+      },
+      {
+        "seconds": 56.998775510204084,
+        "type": 1,
+        "positionX": -2.0,
+        "duration_seconds": 0.0,
+        "side": "notesAbove"
+      },
+      {
+        "seconds": 57.15183673469388,
+        "type": 1,
+        "positionX": 2.0,
+        "duration_seconds": 0.0,
+        "side": "notesAbove"
+      },
+      {
+        "seconds": 57.30489795918368,
+        "type": 1,
+        "positionX": 6.0,
+        "duration_seconds": 0.0,
+        "side": "notesAbove"
+      }
+    ],
+    "ledger_sha256": "3021d2b82f7a59513571c8d64b780ac7443b503f3d43f5d8bef3513a60ee0e08"
+  },
+  "shared_objects": {
+    "lesson": "Raw simultaneous objects are not independent contacts",
+    "examples": [
+      {
+        "chart": "Bounded Quietude IN",
+        "seconds": 90.8571,
+        "raw_objects": 4,
+        "roles": "2 taps+2 drags"
+      },
+      {
+        "chart": "Stardust:RAY IN",
+        "seconds": 122.9268,
+        "raw_objects": 8,
+        "roles": "4 drags+2 taps+2 flicks"
+      },
+      {
+        "chart": "Hydra AT",
+        "seconds": 34.5,
+        "raw_objects": 8,
+        "roles": "4 holds+4 flicks"
+      }
+    ],
+    "limitations": "Sharing requires transformed positions and gesture review; no player feasibility proof"
+  },
+  "line_roles": {
+    "lesson": "Many engine lines can implement one playing locus",
+    "chart": "Der Schneid AT",
+    "multi_note_carriers": 9,
+    "single_note_carriers": 5,
+    "empty_visible_lines": 10,
+    "limitations": "Static classification only; active anchor needs temporal evidence. Terminal 4 raw holds may co-locate, not 4 distinct contacts"
+  },
+  "no_quotas": {
+    "lesson": "Use note kinds for deliberate roles",
+    "chart": "Verrückt IN",
+    "tap": 837,
+    "drag": 398,
+    "hold": 50,
+    "flick": 0,
+    "limitations": "No rule requires all four kinds in each phrase or full chart"
+  },
+  "occupied_voice_answer": {
+    "lesson": "Reserve one sustained contact; answer with free contacts rather than retriggering the held finger",
+    "chart": "祈 -我ら神祖と共に歩む者なり- AT",
+    "window_seconds": [
+      19.45205479452055,
+      20.547945205479454
+    ],
+    "observations": [
+      "Source line 2 hold at 19.4520547945 s, local x 5.25, duration 1.095890411 s; taps answer at 19.5890410959,19.7260273973,19.8630136986,20.0 s."
+    ],
+    "transfer_recipe": [
+      "Choose allowed_fingers/hold_fingers explicitly; reserve hold head→tail plus intended recovery margin.",
+      "Map the answer to free contacts using measured rhythm, not uniform density fill.",
+      "Inspect world target and carrier path before treating local separation as physical separation."
+    ],
+    "caveats": [
+      "Tuples are source-local timing/geometry; they do not identify instruments or prove ergonomics.",
+      "Other source lines and active holds may change available fingers."
+    ],
+    "provenance": {
+      "archive": "https://github.com/7aGiven/Phigros_Resource",
+      "study": "pattern-ledger.json; decoded source-line tuples; no human playtest",
+      "study_sha256": "3021d2b82f7a59513571c8d64b780ac7443b503f3d43f5d8bef3513a60ee0e08"
+    },
+    "source_line": 2,
+    "source_notes": [
+      {
+        "seconds": 19.45205479452055,
+        "type": 3,
+        "positionX": 5.25,
+        "duration_seconds": 1.095890410958904,
+        "side": "notesAbove"
+      },
+      {
+        "seconds": 19.589041095890412,
+        "type": 1,
+        "positionX": 1.75,
+        "duration_seconds": 0.0,
+        "side": "notesAbove"
+      },
+      {
+        "seconds": 19.726027397260275,
+        "type": 1,
+        "positionX": -3.5,
+        "duration_seconds": 0.0,
+        "side": "notesAbove"
+      },
+      {
+        "seconds": 19.863013698630137,
+        "type": 1,
+        "positionX": 1.75,
+        "duration_seconds": 0.0,
+        "side": "notesAbove"
+      },
+      {
+        "seconds": 20.0,
+        "type": 1,
+        "positionX": -1.75,
+        "duration_seconds": 0.0,
+        "side": "notesAbove"
+      }
+    ],
+    "ledger_sha256": "3021d2b82f7a59513571c8d64b780ac7443b503f3d43f5d8bef3513a60ee0e08"
+  },
+  "true_rest_after_tails": {
+    "lesson": "Head-free is not contact-free: stage line movement only after real release",
+    "chart": "PRAGMATISM RESURRECTION IN",
+    "window_seconds": [
+      98,
+      114
+    ],
+    "observations": [
+      "Last head 104.137931 s; next 111.724138 s.",
+      "Holds on lines 2/3/7/6 remain until 106.206897 s; true all-contact rest starts there, not at last head."
+    ],
+    "transfer_recipe": [
+      "Compute maximum active hold tail and connected-drag end across carriers.",
+      "Use release→pickup for main-anchor migration/decorative exposition.",
+      "Settle before the next approach; retain one main playing locus and annotate rest evidence."
+    ],
+    "caveats": [
+      "Rounded display times; full exact source records remain optional.",
+      "No reaction-time allowance or human recovery claim is inferred from duration alone."
+    ],
+    "provenance": {
+      "archive": "https://github.com/7aGiven/Phigros_Resource",
+      "study": "deep-reference-synthesis.md; decoded events + rendered two-second samples; no human playtest",
+      "study_sha256": "2478656d62cd82b57bfa6de346bbb0c6f6cf9b197349b6cefc56afa8f03c6f3d"
+    },
+    "actual_rest_seconds": [
+      106.206897,
+      111.724138
+    ]
+  },
+  "reprise_gesture_substitution": {
+    "lesson": "Develop a recognizable phrase by changing articulation/occupancy while retaining a legible frame",
+    "chart": "Distorted Fate AT",
+    "window_seconds": [
+      94,
+      144
+    ],
+    "observations": [
+      "Earlier 94–114 s staged geometry/held-tile section contrasts with 128–144 s finale.",
+      "Finale 128–144 s has 221 heads:198 tap/14 hold/9 flick;136–140 s favors discrete attacks,142 s adds visible release articulation."
+    ],
+    "transfer_recipe": [
+      "First establish a rhythmic cell and hand relation from your own music evidence.",
+      "On its return, change sustained duration, answering ownership or selected release gesture instead of merely multiplying notes.",
+      "Resolve elaborate presentation toward regular geometry as discrete coordination becomes harder."
+    ],
+    "caveats": [
+      "Study verifies sectional contrast, not a note-for-note musical reprise; audio/motif identity must be corroborated separately.",
+      "Reference has upper/lower/carrier relationships:49 selected finale heads flagged off-axis; do not copy those as regular default."
+    ],
+    "provenance": {
+      "archive": "https://github.com/7aGiven/Phigros_Resource",
+      "study": "deep-reference-synthesis.md; decoded events + rendered two-second samples; no human playtest",
+      "study_sha256": "2478656d62cd82b57bfa6de346bbb0c6f6cf9b197349b6cefc56afa8f03c6f3d"
+    },
+    "selected_finale_seconds": [
+      128,
+      144
+    ]
+  },
+  "carrier_main_locus": {
+    "lesson": "Normalize actual judgment targets onto a declared main axis; retain carrier provenance",
+    "chart": "Der Schneid AT",
+    "window_seconds": [
+      133,
+      151
+    ],
+    "observations": [
+      "At 142.525338 s invisiblecarrier 3 tap targets approximately(262.5,-227.8125) and(525,-227.8125) on 1350 x 759.375 reference canvas.",
+      "At 142.702703 s carrier 3 hold targets approximately(-262.5,-227.8125), on the ordinary row.",
+      "Source 24 engine lines includes 10 globally empty 10–19; engine count is not gameplay-axis count."
+    ],
+    "transfer_recipe": [
+      "Retain line_id/local x/side/rotation and evaluate movement at judgment.",
+      "Project transformed target onto declared main-anchor tangent; flag unresolved remapping rather than stack local x.",
+      "Use hidden one-note carriers for approach motion that converges coherently; holds stay stable through tail."
+    ],
+    "caveats": [
+      "This study uses 1350 x 759.375 16:9 canvas; package 1350 x 900 is a separate adapter convention, not identical physical geometry.",
+      "A dominant source line heuristic is not proof of the active playing anchor.",
+      "Opacity 0 of carrierline does not by itself establish note invisibility in every runtime."
+    ],
+    "provenance": {
+      "archive": "https://github.com/7aGiven/Phigros_Resource",
+      "study": "deep-reference-synthesis.md; decoded events + rendered two-second samples; no human playtest",
+      "study_sha256": "2478656d62cd82b57bfa6de346bbb0c6f6cf9b197349b6cefc56afa8f03c6f3d"
+    },
+    "reference_formula": "P=((move_x-.5)*1350,(move_y-.5)*759.375)+(positionX/18*1350)*(cos(rotation),sin(rotation))"
+  },
+  "terminal_length_duration": {
+    "lesson": "A huge approaching bar can be a short held object; visual length is not sustained-contact duration",
+    "chart": "Der Schneid AT",
+    "window_seconds": [
+      143.783784,
+      151
+    ],
+    "observations": [
+      "Twoordinary line 0 holds 143.783784→144.864865 s, then no heads until 149.189189 s.",
+      "Fourterminal carrier holds arrive 149.189189 s: duration 0.067568 s, speed 80, local x 0; transformedheadsall coincide atcenter.",
+      "Rotations 90/180/270/360 degrees, opacity 0 atimpact; spectacular bars do not prove fourdistinct contacts."
+    ],
+    "transfer_recipe": [
+      "Separate visual approach length/speed from exact hold duration in design evidence.",
+      "After ordinary contacts resolve, stage a pre-cued ending with empty lines around stable real sustained voices.",
+      "Do not manufacture fourterminalholds or opposing approaches to satisfy multifinger/style quotas."
+    ],
+    "caveats": [
+      "Co-located runtime collection behavior requires actual renderer/gameplay verification.",
+      "Reference terminal four-direction flourish is an explicit special case, not normal generation grammar."
+    ],
+    "provenance": {
+      "archive": "https://github.com/7aGiven/Phigros_Resource",
+      "study": "deep-reference-synthesis.md; decoded events + rendered two-second samples; no human playtest",
+      "study_sha256": "2478656d62cd82b57bfa6de346bbb0c6f6cf9b197349b6cefc56afa8f03c6f3d"
+    }
+  },
+  "recent_lateral_cell": {
+    "lesson": "Compose repeatable lateral relations with gaps; global fast spacing is not same-finger retrigger spacing",
+    "chart": "AbsoluTe disoRdeR AT",
+    "window_seconds": [
+      112,
+      128
+    ],
+    "observations": [
+      "Selected 271 heads:98 tap/135 drag/5 hold/33 flick; all heads project onto main axis in this study.",
+      "At 116.25→116.425781 s attack cell is outerleft→innerleft→outerleft→innerright; repeats 116.601562→116.777344 s.",
+      "Outerleft repeats 117.188 ms apart despite 58.594 ms global steps; cell gap matters."
+    ],
+    "transfer_recipe": [
+      "Choose a small lane/order motif whose repeated-finger recovery can be explained.",
+      "Retain your own measured irregular beats; vary answer/exit on return.",
+      "Count connected drags separately from fresh attacks; show negative space after intensity."
+    ],
+    "caveats": [
+      "Suggestedhand flow is a hypothesis; no hand anatomy/playtest proof.",
+      "1350-widecanonical positions below come from this study projection, not source-local positionX."
+    ],
+    "provenance": {
+      "archive": "https://github.com/7aGiven/Phigros_Resource",
+      "study": "deep-reference-synthesis.md; decoded events + rendered two-second samples; no human playtest",
+      "study_sha256": "2478656d62cd82b57bfa6de346bbb0c6f6cf9b197349b6cefc56afa8f03c6f3d"
+    },
+    "canonical_attack_tuples": [
+      [
+        116.25,
+        -437.5
+      ],
+      [
+        116.308594,
+        -131.25
+      ],
+      [
+        116.367188,
+        -437.5
+      ],
+      [
+        116.425781,
+        131.25
+      ],
+      [
+        116.601562,
+        -437.5
+      ],
+      [
+        116.660156,
+        -131.25
+      ],
+      [
+        116.71875,
+        -437.5
+      ],
+      [
+        116.777344,
+        131.25
+      ]
+    ]
+  },
+  "recent_single_axis_decoration": {
+    "lesson": "Keep ordinary lateral work clear while empty guides carry visual energy",
+    "chart": "Verrückt IN",
+    "window_seconds": [
+      40,
+      56
+    ],
+    "observations": [
+      "171 heads:114 tap/49 drag/8 hold/0 flick.",
+      "Primary playing row stays horizontal near lower screen 40–46 s while long crossing empty guides move.",
+      "Around 49–51 s repeated attacks concentrate in two lateral zones;52 s clears before sparse material near 54 s.",
+      "Seven globally emptyengine lines 17–23 support decoration."
+    ],
+    "transfer_recipe": [
+      "Establish ordinary attack/thread arrangement first; give crossing guides no scoring notes.",
+      "Leave negative space before a phrase return.",
+      "Use note kinds for musical roles; no flick quota."
+    ],
+    "caveats": [
+      "Frame sampling does not prove every approach/occlusion remains readable.",
+      "Globallyempty status is static evidence; active playing roles still need temporal review."
+    ],
+    "provenance": {
+      "archive": "https://github.com/7aGiven/Phigros_Resource",
+      "study": "deep-reference-synthesis.md; decoded events + rendered two-second samples; no human playtest",
+      "study_sha256": "2478656d62cd82b57bfa6de346bbb0c6f6cf9b197349b6cefc56afa8f03c6f3d"
+    }
+  }
+}

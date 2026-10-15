@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "phigros-chart-mcp"
+version = "0.1.0"
+description = "Standalone, structured Phigros chart authoring over MCP"
+requires-python = ">=3.11"
+dependencies = ["mcp==1.30.0", "jsonschema>=4.23,<5"]
+[project.optional-dependencies]
+analysis = ["numpy>=1.26,<3"]
+[project.scripts]
+phigros-chart-mcp = "phigros_chart_mcp.server:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.setuptools.package-data]
+phigros_chart_mcp = ["resources/*.md", "resources/*.json"]

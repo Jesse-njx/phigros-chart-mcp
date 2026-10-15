@@ -1,0 +1,222 @@
+{
+  "mixed_roles_phrase": {
+    "purpose": "Synthetic reusable fixture: discrete attacks, sustained ownership, connected thread, release accent. Replace timings with corroborated musical evidence.",
+    "create": {
+      "metadata": {
+        "title": "Four roles fixture"
+      },
+      "bpm": 120,
+      "main_line": {
+        "y": -0.28,
+        "opacity": 1,
+        "speed": 2.2222222222222223
+      }
+    },
+    "section": {
+      "name": "intro call and sustain",
+      "start_beat": "0",
+      "end_beat": "8",
+      "hand_plan": "L-middle sustain; R-index travels; free L-index answers; release before flick",
+      "rationale": "Synthetic articulation example, not a musical transcription"
+    },
+    "operations": [
+      {
+        "type": "insert_notes",
+        "line_id": "main",
+        "notes": [
+          {
+            "kind": "tap",
+            "beat": "0",
+            "x": -0.1,
+            "annotation": {
+              "hand": "L",
+              "finger": "index",
+              "voice": "discrete attack"
+            }
+          },
+          {
+            "kind": "hold",
+            "beat": "1",
+            "duration": "4",
+            "x": -0.28,
+            "annotation": {
+              "hand": "L",
+              "finger": "middle",
+              "voice": "sustained role"
+            }
+          },
+          {
+            "kind": "tap",
+            "beat": "2",
+            "x": -0.1,
+            "annotation": {
+              "hand": "L",
+              "finger": "index",
+              "voice": "answer"
+            }
+          }
+        ]
+      },
+      {
+        "type": "insert_pattern",
+        "line_id": "main",
+        "pattern": "drag_path",
+        "beats": [
+          "2",
+          "5/2",
+          "3",
+          "7/2"
+        ],
+        "lane_x": [
+          0.1,
+          0.28
+        ],
+        "kind": "drag",
+        "annotation": {
+          "hand": "R",
+          "finger": "index",
+          "gesture": "continuous thread"
+        }
+      },
+      {
+        "type": "insert_notes",
+        "line_id": "main",
+        "notes": [
+          {
+            "kind": "flick",
+            "beat": "6",
+            "x": 0.28,
+            "annotation": {
+              "hand": "R",
+              "finger": "index",
+              "gesture": "release after thread with recovery",
+              "rationale": "One beat after sustain tail; separate occupied zones"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "settled_hold_carrier": {
+    "purpose": "Hidden one-note carrier approaches main locus then stays fixed through hold; opacity belongs to line sprite, preview note visibility separately.",
+    "requires_main_line": {
+      "y": -0.28,
+      "rotation": 0,
+      "opacity": 1
+    },
+    "operations": [
+      {
+        "type": "create_line",
+        "id": "held-carrier",
+        "name": "Single sustain carrier",
+        "role": "note_carrier",
+        "anchor_id": "main",
+        "x": 0.24,
+        "y": -0.1,
+        "rotation": 0,
+        "opacity": 0
+      },
+      {
+        "type": "set_effect",
+        "line_id": "held-carrier",
+        "channel": "y",
+        "start": "0",
+        "end": "2",
+        "a": -0.1,
+        "b": -0.28,
+        "replace": true
+      },
+      {
+        "type": "set_effect",
+        "line_id": "held-carrier",
+        "channel": "y",
+        "start": "2",
+        "end": "8",
+        "a": -0.28,
+        "replace": true
+      },
+      {
+        "type": "insert_notes",
+        "line_id": "held-carrier",
+        "notes": [
+          {
+            "kind": "hold",
+            "beat": "3",
+            "duration": "4",
+            "x": 0,
+            "annotation": {
+              "hand": "R",
+              "finger": "middle",
+              "gesture": "fixed sustain",
+              "rationale": "Carrier settles a beat before head and stays on visible main playing line through tail"
+            }
+          }
+        ]
+      }
+    ],
+    "limitations": "Example does not simulate approach/hold-body rendering; verify actual renderer"
+  },
+  "two_finger_sustain_answer": {
+    "purpose": "Synthetic reusable IN ownership fixture: reserve one contact for a sustained voice and answer with the other; no four-type quota. Replace timing with corroborated measured articulation.",
+    "evidence_record": {
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "settings": {
+        "fixture": "two-finger-sustain-v1"
+      },
+      "producer": "portable synthetic fixture, not measured audio",
+      "analysis": {
+        "beat_start": 0,
+        "beat_end": 4,
+        "source_articulation_events": [
+          {
+            "beat": 0,
+            "kind_evidence": [
+              3
+            ],
+            "source_head_count": 1,
+            "sustained_durations": [
+              3
+            ]
+          },
+          {
+            "beat": 1,
+            "kind_evidence": [
+              1
+            ],
+            "source_head_count": 1,
+            "sustained_durations": []
+          },
+          {
+            "beat": 2,
+            "kind_evidence": [
+              1
+            ],
+            "source_head_count": 1,
+            "sustained_durations": []
+          }
+        ],
+        "quantized_audio_attack_candidates": []
+      }
+    },
+    "config": {
+      "id": "held answer",
+      "motif": "held_voice_answer",
+      "purpose": "One sustained contact and independent other-hand answers",
+      "source_kinds": [
+        1
+      ],
+      "allowed_fingers": [
+        "L_index",
+        "R_index"
+      ],
+      "hold_fingers": [
+        "L_index"
+      ],
+      "hold_mode": "alternating",
+      "finger_order": [
+        "R_index"
+      ]
+    },
+    "tool_orchestration": "Register/import evidence_record; pass returned evidence_ref and config to authoring_plan_phrase; inspect receipt and authoring_contacts; apply and checkpoint."
+  }
+}

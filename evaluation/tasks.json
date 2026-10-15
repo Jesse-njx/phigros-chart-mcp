@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "purpose": "Future low-cost agent evaluation. These tasks have not been run with GPT-6 Luna. They test intent translation and bounded editing; full-song artistic quality requires a separate review.",
+  "common_setup": {
+    "bpm": 120,
+    "offset_ms": 0,
+    "main_line": {"x": 0, "y": -0.25, "rotation": 0, "opacity": 1, "speed": 2},
+    "context": ["MCP tool descriptions", "phigros-authoring://guide/v1", "phigros-authoring://operations/v1"],
+    "instructions": "Use public MCP tools. Save requests, responses, final authoring sidecar, official export, and a brief rationale. Record exact UTF-8 bytes and tool calls; do not estimate model tokens from bytes. Read only the relevant phrase. Ask a targeted clarification when intent has materially different meanings. Do not claim human playability from raw note counts."
+  },
+  "tasks": [
+    {
+      "id": "two_bar_four_key_stair",
+      "prompt": "At beat 32, write two bars of sixteenth-note 4K stairs. Use x positions -0.30, -0.10, 0.10, 0.30, with ascending order in the first bar and descending order in the second. Turn the very last note into a flick. The time signature is 4/4.",
+      "seed": [],
+      "acceptance": ["Exactly 32 heads in [32,40), spaced 1/4 beat", "First four positions ascend; heads at 36,36.25,36.5,36.75 descend", "Exactly one flick at 39.75; 31 taps", "All scoring notes converge on main line; no invented lines needed"],
+      "critical_errors": ["16 instead of 32 heads", "A head at beat 40", "Mirrors only note graphics instead of lateral positions"]
+    },
+    {
+      "id": "approach_speed_not_rhythm",
+      "prompt": "These four taps are timed correctly. Make them fly toward the line twice as fast. Keep the music timing and judgment positions exactly the same.",
+      "seed": [{"kind": "tap", "beat": 8, "x": -0.3}, {"kind": "tap", "beat": 9, "x": -0.1}, {"kind": "tap", "beat": 10, "x": 0.1}, {"kind": "tap", "beat": 11, "x": 0.3}],
+      "acceptance": ["All four head times and world targets unchanged", "Approach speed multiplier doubles", "No BPM change or added notes"],
+      "critical_errors": ["Halves beat spacing", "Doubles BPM", "Moves judgment locus"]
+    },
+    {
+      "id": "independent_note_sway",
+      "prompt": "Only the tap at beat 12 should sway slightly left and right during its final two beats of approach, then arrive at its existing spot. The notes at beats 10 and 14 and the main line should stay still. Keep this a regular single-line chart.",
+      "seed": [{"kind": "tap", "beat": 10, "x": -0.2}, {"kind": "tap", "beat": 12, "x": 0.1}, {"kind": "tap", "beat": 14, "x": 0.2}],
+      "acceptance": ["Isolated target note assigned to its own carrier", "Carrier references main playing anchor", "Main geometry unchanged", "Carrier lateral motion exists before beat 12 and resolves to original target at beat 12", "Other notes unchanged", "No unsupported per-note animation field"],
+      "critical_errors": ["Moves all notes using main line", "Note misses original judgment target", "Creates sustained second playing axis"]
+    },
+    {
+      "id": "sustained_voice_and_answers",
+      "prompt": "For beats 8 through 12, give the sustained outer chord to the two middle fingers. Put four alternating inner taps at beats 8.5, 9.5, 10.5 and 11.5. Leave a half-beat release before beat 12. State the intended ownership.",
+      "seed": [],
+      "acceptance": ["Two holds begin at 8 and end at 11.5", "Four inner taps at requested beats", "Outer and inner contact targets distinct", "Annotations assign two middle fingers to holds and two index fingers to answers", "Hold tails included when reading [10,11)"],
+      "critical_errors": ["A held finger is simultaneously assigned an inner tap", "Raw four-object count asserted to prove four-finger feasibility", "Hold ends after 12"]
+    },
+    {
+      "id": "rest_despite_audio_energy",
+      "prompt": "The current hold ends at beat 16. The next musical attack is at beat 24. The audio stays loud because of a reverb tail, but I want full physical recovery in between. Add a restrained decorative line effect during the rest and keep the main landmark readable.",
+      "seed": [{"kind": "hold", "beat": 12, "duration": 4, "x": 0}, {"kind": "tap", "beat": 24, "x": 0}],
+      "acceptance": ["No scoring head or sustained contact in (16,24)", "Existing timing/tail preserved", "Added lines are decorative and own no scoring notes", "Main line stays readable near beat 24", "Rationale separates audio energy from fresh musical attacks"],
+      "critical_errors": ["Fills rest with taps or drags", "Extends hold through recovery", "Adds fake scoring objects for decorative bars"]
+    },
+    {
+      "id": "four_types_without_quota",
+      "prompt": "This eight-beat phrase has four dry attacks at beats 0, 1, 2, 3, then one sustained sound from beat 4 to beat 7. There is no connected flourish or strong release accent. Make a sparse readable phrase.",
+      "seed": [],
+      "acceptance": ["Four discrete attacks and one sustained role", "No requirement to insert drags or flicks merely to include every kind", "An explicit release/recovery interval before beat 8", "Rationale explains each gesture role"],
+      "critical_errors": ["Enforces a four-type quota", "Uniform sixteenth fill without supplied musical evidence"]
+    },
+    {
+      "id": "ambiguous_faster",
+      "prompt": "Make this section faster.",
+      "seed": [{"kind": "tap", "beat": 8, "x": -0.1}, {"kind": "tap", "beat": 9, "x": 0.1}],
+      "acceptance": ["One concise clarification distinguishes denser rhythm from faster note approach or line animation", "No dependent mutation before answer"],
+      "critical_errors": ["Silently changes BPM", "Invents additional musical attacks"]
+    },
+    {
+      "id": "recover_without_duplicate",
+      "prompt": "The client disconnected immediately after applying this phrase. Recover the saved checkpoint and determine whether the phrase is already present before continuing. Do not duplicate it.",
+      "seed": [{"kind": "tap", "beat": 8, "x": -0.1}, {"kind": "tap", "beat": 9, "x": 0.1}],
+      "setup": "Export a checkpoint with this phrase, restart the server, and supply its authoring sidecar path. Old ephemeral chart/plan handles are invalid.",
+      "acceptance": ["Imports sidecar and reads bounded relevant phrase", "Exactly two original heads remain", "Uses recovered digest for any new plan", "Does not blindly replay a lost apply call"],
+      "critical_errors": ["Duplicates scoring notes", "Uses obsolete digest or substitutes fresh digest into an old plan"]
+    }
+  ],
+  "report": {
+    "per_task": ["model and reasoning settings", "prompt/context bytes", "tool calls and exact request/response bytes", "elapsed tool time", "critical errors", "acceptance evidence with artifact links", "clarification count", "repairs needed"],
+    "separate_full_song_review": ["musical attack/sustain/rest interpretation", "contact ownership and recovery", "approach readability", "motif development and contrast", "main playing locus and aesthetic coherence", "human playtest/listening evidence when available"],
+    "quality_claim_rule": "Passing these tasks establishes only the tested authoring behaviors. It does not prove official-equivalent chart quality or general ability for arbitrary music."
+  }
+}
